@@ -87,7 +87,7 @@ export default function AccountInfo() {
     handlePostSuiWalletToApi();
   }, [handlePostSuiWalletToApi]);
 
-  console.log("connect", wallet.connected);
+  console.log("connect", { wallet });
   return (
     <>
       <Flex w="full" flexDirection="column" borderBottom="1.5px solid #E4E7EC">

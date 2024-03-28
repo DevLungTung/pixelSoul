@@ -1,7 +1,4 @@
-import {
-  connectToMetamask,
-  connectToWalletConnect,
-} from "@/contracts/interfaces/EthersConnect";
+import { connectToWalletConnect } from "@/contracts/interfaces/EthersConnect";
 import { getToast } from "@/utils";
 import { Box, Text, useToast } from "@chakra-ui/react";
 import React from "react";

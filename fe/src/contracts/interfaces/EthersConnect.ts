@@ -43,8 +43,8 @@ export const connectToWalletConnect = async () => {
     cacheProvider: true,
     providerOptions: walletConnectProviderOptions,
   });
-  const provider = await web3Modal.connect(); 
-  const web3Provider = new ethers.providers.Web3Provider(provider);  
+  const provider = await web3Modal.connect();
+  const web3Provider = new ethers.providers.Web3Provider(provider);
   store.dispatch(setProvider(provider));
-  await store.dispatch(generateContract(provider));
+  await store.dispatch(generateContract(web3Provider)).unwrap();
 };
