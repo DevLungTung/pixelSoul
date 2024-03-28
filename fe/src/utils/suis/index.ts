@@ -1,28 +1,33 @@
-import { devnetConnection, mainnetConnection, testnetConnection } from "@mysten/sui.js";
+import {
+  devnetConnection,
+  mainnetConnection,
+  testnetConnection,
+} from "@mysten/sui.js";
 import { getSuiNetworkEnv } from "../env.helpers";
 
 export const CHECK_NAME_OBJECT_ID =
-  "0x7a2982a80f5dd142267cf36c940e3c2cf337806462ccc7c3efdb37e120632827";
+  "0x8df1913abb2a266938d12e405b4b46ae5fd86c5f09e905e77a3e4bcfb9dd0858";
 
-export const coinType = `0x2505fc7fa0a7ea8b19e439e95b12b59e8762b15832c806de21f8b059f845775b::brawlz::mint_hero`;
+export const coinType = `0x7ded10b1f9c5d04f4284e6567635e5afeaa7098826e65de54b9dba5dd23d5141::brawlz::mint_hero`;
 export const package_type =
-  "0x2505fc7fa0a7ea8b19e439e95b12b59e8762b15832c806de21f8b059f845775b::brawlz::Hero";
+  "0x7ded10b1f9c5d04f4284e6567635e5afeaa7098826e65de54b9dba5dd23d5141::brawlz::Hero";
 export const operator_address =
   "0x7589cb9fad93acf50fac1fb0add781f5418f76a37e2ebe76b0382761aa878bab";
 
 export const soultag_package =
-  "0xc235858950e5d59c9ffba08dbdc237d45b53b8daf77292fb69ce2f49819038f4::soulTag::mint";
+  "0xae7639b0cf20f6b874c75c7e04c7eb9472a9a39d718c2b8b8ccdc266b005997c::soulTag::mint";
 export const soultag_check_condition =
-  "0xc235858950e5d59c9ffba08dbdc237d45b53b8daf77292fb69ce2f49819038f4::soulTag::SoulTag";
-
+  "0xae7639b0cf20f6b874c75c7e04c7eb9472a9a39d718c2b8b8ccdc266b005997c::soulTag::SoulTag";
 
 export const getSuiNetworkConnection = () => {
   const env = getSuiNetworkEnv();
-  switch(env) {
-    case 'TEST':  
+  console.log({ env, testnetConnection, devnetConnection });
+  switch (env) {
+    case "TEST":
       return testnetConnection;
-    case 'MAIN':
+    case "MAIN":
       return mainnetConnection;
-    default: return devnetConnection;
+    default:
+      return devnetConnection;
   }
-}
+};

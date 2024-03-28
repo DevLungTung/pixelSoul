@@ -21,7 +21,7 @@
     "firebase:start": "node dist/firebase/jobs/updateChainData"
   },
   "dependencies": {
-    "@mysten/sui.js": "^0.37.1",
+    "@mysten/sui.js": "0.37.1",
     "@nestjs-modules/mailer": "^1.8.1",
     "@nestjs/common": "^9.0.0",
     "@nestjs/config": "^2.3.1",

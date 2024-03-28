@@ -28,7 +28,7 @@ import { useWallet } from "@suiet/wallet-kit";
 import { motion } from "framer-motion";
 import React, { useCallback, useState } from "react";
 
-const SOULTAG_NAME = `0xcc1b068308e08e04983ad9c95847d824501b667769b4659ff7e7afbb3c5608a5`;
+const SOULTAG_NAME = `0x8be3a781a46d19fcc4912f98310717902b2d0650bc6e5d56395baaa4e02cdfcc`;
 
 interface IProps extends Omit<ModalProps, "children"> {}
 
@@ -77,6 +77,8 @@ export default function MintSoulTagModal({ onClose, ...props }: IProps) {
       ],
     });
 
+    console.log({ tx });
+
     try {
       const resData = await wallet.signAndExecuteTransactionBlock({
         //@ts-ignore
@@ -90,6 +92,7 @@ export default function MintSoulTagModal({ onClose, ...props }: IProps) {
       }
       onClose();
     } catch (ex) {
+      console.log({ ex });
       toast(getToast("nft mint failed"));
     }
   };

@@ -149,7 +149,7 @@ module brawlz::brawlz {
     }
 
     public entry fun mint_hero(name:vector<u8>,head:vector<u8>,body:vector<u8>,leg:vector<u8>,image:vector<u8>,hero_name:&mut HeroName, ctx: &mut TxContext){
-        assert!(!table::contains(&mut hero_name.names,string::utf8(name)), 1);
+        assert!(!table::contains(& hero_name.names,string::utf8(name)), 1);
         let ohead=create_head(head,ctx);
         let obody=create_body(body,ctx);
         let oleg=create_leg(leg,ctx);
